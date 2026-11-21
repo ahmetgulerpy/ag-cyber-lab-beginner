@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f5f8fa;
+  --color-card: #ffffff;
+  --color-ink: #172b3a;
+  --color-muted: #64748b;
+  --color-brand: #176b87;
+  --color-brand-dark: #0f5269;
+  --color-accent: #38a3a5;
+  --color-soft: #e8f3f7;
+  --color-success: #25845b;
+  --color-success-soft: #e7f4ed;
+  --color-warn: #d69a32;
+  --color-warn-ink: #8a5d0f;
+  --color-warn-soft: #fbf3e1;
+  --color-danger: #c65353;
+  --color-danger-soft: #fbeded;
+  --color-line: #dfe8ed;
+  --color-term: #0f2230;
+  --color-term-line: #1e3a4d;
+
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.lesson-text {
+  max-width: 68ch;
+  line-height: 1.8;
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(23, 107, 135, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 107, 135, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,46 @@
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Framework/build output
+.next/
+dist/
+build/
+out/
+coverage/
+.turbo/
+.vercel/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local databases and runtime data
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Debug and temporary files
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+*.tmp
+*.bak
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# TypeScript
+*.tsbuildinfo

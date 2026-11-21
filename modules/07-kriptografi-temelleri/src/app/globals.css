@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #f5f8fa;
+  --color-card: #ffffff;
+  --color-ink: #172b3a;
+  --color-muted: #64748b;
+  --color-brand: #176b87;
+  --color-accent: #38a3a5;
+  --color-soft: #e8f3f7;
+  --color-ok: #25845b;
+  --color-warn: #d69a32;
+  --color-bad: #c65353;
+  --color-line: #dfe8ed;
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+button:not(:disabled),
+select,
+summary {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+textarea,
+input,
+select {
+  font-family: inherit;
+}
+
+.hexbox {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+@keyframes fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeup {
+  animation: fadeup 0.25s ease-out;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media print {
+  header,
+  aside,
+  footer {
+    display: none !important;
+  }
+}

@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page: #f5f8fa;
+  --color-card: #ffffff;
+  --color-ink: #172b3a;
+  --color-muted: #64748b;
+  --color-brand: #176b87;
+  --color-accent: #38a3a5;
+  --color-soft: #e8f3f7;
+  --color-ok: #25845b;
+  --color-warn: #d69a32;
+  --color-bad: #c65353;
+  --color-line: #dfe8ed;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-card p-5 shadow-[0_1px_2px_rgba(23,43,58,0.04)];
+  }
+  .btn-primary {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-brand text-white hover:bg-[#135a73];
+  }
+  .btn-ghost {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border border-line bg-white text-ink hover:bg-soft;
+  }
+  .chip {
+    @apply inline-flex cursor-pointer items-center rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium text-ink transition hover:bg-soft;
+  }
+  .chip-active {
+    @apply border-brand bg-brand text-white hover:bg-brand;
+  }
+  .label-mini {
+    @apply text-xs font-semibold uppercase tracking-wider text-muted;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.25s ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
